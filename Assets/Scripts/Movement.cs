@@ -9,12 +9,13 @@ public class Movement : MonoBehaviour
     public LayerMask groundLayer;
     public float rayDistance;
     private bool isGrounded;
+    public float drag= 0.3f;
     void Update()
     {
         isGrounded = Physics.Raycast(transform.position, Vector3.down, rayDistance, groundLayer);
         Color debugColor = isGrounded ? Color.green : Color.red;
         Debug.DrawRay(transform.position, Vector3.down * rayDistance, debugColor);
-        
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
@@ -23,13 +24,13 @@ public class Movement : MonoBehaviour
     }
     void Move()
     {
-        Vector3 dir= Vector3.zero;
-        if(Input.GetKey(KeyCode.W)) dir += player.forward;
-        if(Input.GetKey(KeyCode.S)) dir -= player.forward;
-        if(Input.GetKey(KeyCode.A)) dir -= player.right;
-        if(Input.GetKey(KeyCode.D)) dir += player.right;
+        float horizontal = Input.GetAxisRaw("Horizontal"); 
+        float vertical = Input.GetAxisRaw("Vertical");
 
-        rb.AddForce(dir* Speed, ForceMode.Force);
+        Vector3 dir = (player.forward * vertical) + (player.right * horizontal);
+
+        float cForce = isGrounded ? Speed : Speed * drag;
+        rb.AddForce(dir* cForce* Speed, ForceMode.Force);
     }
     void Jump()
     {
