@@ -817,6 +817,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2292537636245177391, guid: cda5d948b91ab8d4d8f0d1791fa43ddb, type: 3}
+      propertyPath: scaleFactor
+      value: 1.254
+      objectReference: {fileID: 0}
     - target: {fileID: 1430320343856658457, guid: cda5d948b91ab8d4d8f0d1791fa43ddb, type: 3}
       propertyPath: m_Name
       value: Bugged Condition

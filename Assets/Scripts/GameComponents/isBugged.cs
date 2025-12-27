@@ -6,6 +6,8 @@ public class isBugged : MonoBehaviour
   [SerializeField] private BugArrSO bugArrSO;
   [SerializeField] private GameObject bugListGO;
   [SerializeField] private int maxBugs = 2;
+  [SerializeField, Range(0, 2)] private float scaleFactor = 1f;
+
   private GameManager GameManagerInstance;
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
@@ -45,6 +47,8 @@ public class isBugged : MonoBehaviour
       GameObject randomBugGO = randomBugTransform.gameObject;
 
       Instantiate(randomBugGO, bugTransform);
+      bugTransform.localScale *= scaleFactor;
+
       Debug.Log(randomBugTransform);
     }
   }

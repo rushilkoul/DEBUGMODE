@@ -68,6 +68,7 @@ MonoBehaviour:
   bugArrSO: {fileID: 11400000, guid: 2a90259295d43e945b52fd09ce77dbc4, type: 2}
   bugListGO: {fileID: 4809519499936126200}
   maxBugs: 4
+  scaleFactor: 1
 --- !u!1 &4809519499936126200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,15 +1103,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 346027771087274002, guid: d168267b33d60a74a812af7170421f4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.44400024
+      value: 0.4555
       objectReference: {fileID: 0}
     - target: {fileID: 346027771087274002, guid: d168267b33d60a74a812af7170421f4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29000002
+      value: 0.2991
       objectReference: {fileID: 0}
     - target: {fileID: 346027771087274002, guid: d168267b33d60a74a812af7170421f4d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.10200119
+      value: -0.114
       objectReference: {fileID: 0}
     - target: {fileID: 346027771087274002, guid: d168267b33d60a74a812af7170421f4d, type: 3}
       propertyPath: m_LocalRotation.w
