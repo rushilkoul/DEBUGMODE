@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366909479e793784a9666fd5c2f374bc, type: 3}
   m_Name: BugArray
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  bugTransformArr: []
+  bugTransformArr:
+  - {fileID: 6996221066682727412, guid: 7cd0a77066554be4cb181a05cd370661, type: 3}
+  - {fileID: 7085850472966577899, guid: 19317c5af7337d74aa5cf66cb135e708, type: 3}
+  - {fileID: 8454881933980009055, guid: 0487337f1a82caf40936e00aad598197, type: 3}
+  - {fileID: 935597161834860212, guid: bcde98f39a6101f48ab36367925ab1c6, type: 3}
+  - {fileID: 5000202449763054585, guid: 443842070f709654599f1d2898855882, type: 3}
+  - {fileID: 346027771087274002, guid: d168267b33d60a74a812af7170421f4d, type: 3}
+  - {fileID: 4780066953293772266, guid: 5b43b09491c405b449309972911345ba, type: 3}
