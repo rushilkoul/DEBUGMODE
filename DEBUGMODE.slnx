@@ -1,6 +1,5 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp-Editor.csproj" />
-<<<<<<< HEAD
   <Project Path="Unity.ProBuilder.AssetIdRemapUtility.csproj" />
   <Project Path="Unity.Settings.Editor.csproj" />
   <Project Path="Unity.CollabProxy.Editor.csproj" />
@@ -22,7 +21,5 @@
   <Project Path="Unity.RenderPipelines.Universal.Config.Runtime.csproj" />
   <Project Path="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj" />
   <Project Path="Unity.RenderPipelines.Core.ShaderLibrary.csproj" />
-=======
   <Project Path="Assembly-CSharp.csproj" />
->>>>>>> fb3e5472046f6d026d08729169f4d367c03313d2
 </Solution>
