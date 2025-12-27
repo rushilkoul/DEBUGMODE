@@ -13,7 +13,7 @@ public class isBugged : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if (GameManagerInstance.getIsDebugMode(transform))
+    if (GameManagerInstance.getIsBugged(transform))
     {
       buggedIndicatorVisual.gameObject.SetActive(true);
     }

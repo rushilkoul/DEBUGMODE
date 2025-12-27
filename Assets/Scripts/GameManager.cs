@@ -20,10 +20,15 @@ public class GameManager : MonoBehaviour
     }
   }
 
-  public bool getIsDebugMode(Transform buggedTransform)
+  public bool getIsBugged(Transform buggedTransform)
   {
     float distance = Vector3.Distance(playerPos.position, buggedTransform.position);
     return debugMode && distance < range;
+  }
+
+  public bool getDebugMode()
+  {
+    return debugMode;
   }
 
 
