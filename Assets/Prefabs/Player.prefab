@@ -159,7 +159,7 @@ MonoBehaviour:
   playerCamera: {fileID: 5534952419491037076}
   audioSource: {fileID: 9060019583230436149}
   effectSound: {fileID: 8300000, guid: 1496864236e2c3240bc6ec9d5942e3dc, type: 3}
-  zoomFOV: 40
+  zoomFOV: 75
   smoothSpeed: 10
 --- !u!114 &6701824512603877357
 MonoBehaviour:

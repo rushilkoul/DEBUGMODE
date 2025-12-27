@@ -40,6 +40,7 @@ public class Movement : MonoBehaviour
       rb.linearDamping = 0;
 
     GetInput();
+    SpeedControl();
   }
 
   void FixedUpdate()
@@ -78,4 +79,15 @@ public class Movement : MonoBehaviour
 
     rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
   }
+
+  void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+
+        if (flatVel.magnitude > moveSpeed)
+        {
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
+        }
+    }
 }
