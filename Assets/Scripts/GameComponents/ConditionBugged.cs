@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class isBugged : MonoBehaviour
+public class ConditionBugged : MonoBehaviour
 {
   [SerializeField] private Transform buggedIndicatorVisual;
   [SerializeField] private BugArrSO bugArrSO;
