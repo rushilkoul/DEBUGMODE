@@ -2,27 +2,33 @@ using UnityEngine;
 
 public class Bugged : MonoBehaviour
 {
-  [SerializeField] private Transform buggedIndicatorVisual;
+    private GameManager GameManagerInstance;
+    [SerializeField] bool reverse = false;
+    
+    private Renderer myRenderer;
+    private Collider myCollider;
 
-  private GameManager GameManagerInstance;
-  // Start is called once before the first execution of Update after the MonoBehaviour is created
-  void Start()
-  {
-    GameManagerInstance = GameManager.Instance;
-    buggedIndicatorVisual.gameObject.SetActive(false);
-  }
-
-
-  // Update is called once per frame
-  void Update()
-  {
-    if (GameManagerInstance.getIsBugged(transform))
+    void Start()
     {
-      buggedIndicatorVisual.gameObject.SetActive(true);
+        GameManagerInstance = GameManager.Instance;
+        myRenderer = GetComponent<Renderer>();
+        myCollider = GetComponent<Collider>();
+        
+        UpdateState();
     }
-    else
+
+    void Update()
     {
-      buggedIndicatorVisual.gameObject.SetActive(false);
+        UpdateState();
     }
-  }
+
+    void UpdateState()
+    {
+        bool isBugged = GameManagerInstance.getIsBugged(transform);
+        
+        bool shouldBeVisible = reverse ? !isBugged : isBugged;
+
+        if(myRenderer) myRenderer.enabled = shouldBeVisible;
+        if(myCollider) myCollider.enabled = shouldBeVisible;
+    }
 }
