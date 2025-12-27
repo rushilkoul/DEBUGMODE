@@ -3,3 +3,4 @@
 - Living Room by Alex Safayan [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/7Ma5B10CZLA)
 - Computer mouse by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/6ikB7PIRVyd)
 - Keyboard by Alex Safayan [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/fOy2zvPJAj-)
+- Generator by KolosStudios [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/K58RQ63qR5)
