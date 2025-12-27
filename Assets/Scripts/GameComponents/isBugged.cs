@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class isBugged : MonoBehaviour
 {
-  [SerializeField] private bool debugMode = false;
   [SerializeField] private Transform buggedIndicatorVisual;
+  private GameManager GameManagerInstance;
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
-
+    GameManagerInstance = GameManager.Instance;
   }
 
   // Update is called once per frame
   void Update()
   {
-    if (debugMode)
+    if (GameManagerInstance.getIsDebugMode(transform))
     {
       buggedIndicatorVisual.gameObject.SetActive(true);
     }
@@ -21,6 +21,5 @@ public class isBugged : MonoBehaviour
     {
       buggedIndicatorVisual.gameObject.SetActive(false);
     }
-
   }
 }
