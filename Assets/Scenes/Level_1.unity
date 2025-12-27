@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 759030187}
   - component: {fileID: 759030186}
   - component: {fileID: 759030185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,10 +817,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -2292537636245177391, guid: cda5d948b91ab8d4d8f0d1791fa43ddb, type: 3}
-      propertyPath: debugMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1430320343856658457, guid: cda5d948b91ab8d4d8f0d1791fa43ddb, type: 3}
       propertyPath: m_Name
       value: Bugged Condition
@@ -923,7 +919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491061743952443090, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
       propertyPath: isGrounded
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4458234276460236966, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
       propertyPath: m_Name
@@ -985,14 +981,6 @@ PrefabInstance:
     - target: {fileID: 4355518626454485624, guid: b3d972e3e8cfd20489a42a97284a977e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7010687104832130311, guid: b3d972e3e8cfd20489a42a97284a977e, type: 3}
-      propertyPath: comp1
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7010687104832130311, guid: b3d972e3e8cfd20489a42a97284a977e, type: 3}
-      propertyPath: comp2
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
