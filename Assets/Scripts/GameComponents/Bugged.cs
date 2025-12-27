@@ -9,6 +9,7 @@ public class Bugged : MonoBehaviour
   void Start()
   {
     GameManagerInstance = GameManager.Instance;
+    buggedIndicatorVisual.gameObject.SetActive(false);
   }
 
 
