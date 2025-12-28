@@ -77,13 +77,13 @@ public class Interaction : MonoBehaviour
         {
             interactionActive = false;
             interaction.OnDoubleInput();
-            panelElement.SetActive(true);  
+            // panelElement.SetActive(true);  
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
             interactionActive = true;
             interaction.OnInput();
-            panelElement.SetActive(false);  
+            // panelElement.SetActive(false);  
         }
     }
 

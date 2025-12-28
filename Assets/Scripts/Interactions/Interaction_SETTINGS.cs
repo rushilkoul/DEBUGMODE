@@ -10,6 +10,7 @@ public class Interaction_SETTINGS : InteractionBehaviour
     public override void OnInput()
     {
         Cursor.lockState = CursorLockMode.None; 
+        Cursor.visible = true;
         viewCam.SetActive(true);
         leavePanel.SetActive(true);
         SettingsGFX.SetActive(false);
@@ -19,6 +20,8 @@ public class Interaction_SETTINGS : InteractionBehaviour
     }
     public override void OnDoubleInput()
     {
+        leavePanel.GetComponent<Settings>().BackButton();
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked; 
         viewCam.SetActive(false);
         leavePanel.SetActive(false);

@@ -4,10 +4,10 @@ public class Interaction_EXIT : InteractionBehaviour
 {
     public override void OnInput()
     {
-        Debug.Log("exit the game");
+        Application.Quit();
     }
     public override void OnDoubleInput()
     {
-        // viewCam.SetActive(false);
+        // do nothing the game has been quit lmao
     }
 }
