@@ -5,6 +5,7 @@ public class Interaction_WORK : InteractionBehaviour
     [SerializeField] GameObject viewCam;
     [SerializeField] GameObject leavePanel;
     [SerializeField] GameObject screenSpaceCanvas;
+    [SerializeField] GameObject player;
     public override void OnInput()
     {
         Cursor.lockState = CursorLockMode.None; 
@@ -12,6 +13,8 @@ public class Interaction_WORK : InteractionBehaviour
         StartCoroutine(AnimateFOV(viewCam.GetComponent<Camera>(), 60f, 45f, 0.2f));
         leavePanel.SetActive(true);
         screenSpaceCanvas.SetActive(false);
+        player.GetComponentInChildren<CameraView>().enabled = false;
+        player.GetComponentInChildren<Movement>().enabled = false;
     }
     public override void OnDoubleInput()
     {
@@ -19,6 +22,8 @@ public class Interaction_WORK : InteractionBehaviour
         viewCam.SetActive(false);
         leavePanel.SetActive(false);
         screenSpaceCanvas.SetActive(true);
+        player.GetComponentInChildren<CameraView>().enabled = true;
+        player.GetComponentInChildren<Movement>().enabled = true;
     }
     private System.Collections.IEnumerator AnimateFOV(Camera cam, float fromFOV, float toFOV, float duration)
     {
