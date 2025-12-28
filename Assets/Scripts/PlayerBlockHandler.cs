@@ -21,6 +21,11 @@ public class PlayerBlockHandler : MonoBehaviour
   Collider heldCollider;
   Vector3Int lastCell;
 
+  void Start()
+  {
+    grid.ValidateFluid();
+  }
+
   void Update()
   {
     if (Input.GetKeyDown(KeyCode.E))
@@ -29,6 +34,7 @@ public class PlayerBlockHandler : MonoBehaviour
         TryPickup();
       else
         TryDrop();
+      grid.ValidateFluid();
     }
 
     if (heldBlock != null)
@@ -56,11 +62,13 @@ public class PlayerBlockHandler : MonoBehaviour
 
   void TryPickup()
   {
+    Debug.Log("Tried Pickup");
     Ray ray = new(transform.position, transform.forward);
     if (!Physics.Raycast(ray, out RaycastHit hit, pickupRange))
       return;
 
-    Transform root = hit.collider.transform.root;
+    Transform root = hit.collider.transform.parent;
+    Debug.Log(root);
     if (!root.CompareTag("Pickable Block"))
       return;
 
@@ -139,6 +147,5 @@ public class PlayerBlockHandler : MonoBehaviour
 
     }
 
-    grid.ValidateFluid();
   }
 }
