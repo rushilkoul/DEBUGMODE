@@ -42,7 +42,35 @@ public class CameraView : MonoBehaviour
   {
     if (GameManagerInstance != null)
     {
-      HandleRightClickInteraction();
+      bool isHoldingRightClick = Input.GetMouseButton(1);
+
+      if (Input.GetMouseButtonDown(1))
+      {
+        if (audioSource != null && effectSound != null)
+        {
+          audioSource.PlayOneShot(effectSound);
+        }
+        ScanForPlatforms();
+      }
+
+      if (isHoldingRightClick)
+      {
+        GameManagerInstance.setDebugMode(true);
+        targetWeight = 1f;
+
+        playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, zoomFOV, Time.deltaTime * smoothSpeed);
+      }
+      else
+      {
+        GameManagerInstance.setDebugMode(false);
+        targetWeight = 0f;
+
+        playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, defaultFOV, Time.deltaTime * smoothSpeed);
+      }
+      if (overrideVolume != null)
+      {
+        overrideVolume.weight = Mathf.Lerp(overrideVolume.weight, targetWeight, Time.deltaTime * smoothSpeed);
+      }
     }
 
     HandleMouseLook();
@@ -89,5 +117,30 @@ public class CameraView : MonoBehaviour
 
     transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     player.Rotate(Vector3.up * mouseX);
+  }
+
+  void ScanForPlatforms()
+  {
+    Collider[] hitColliders = Physics.OverlapSphere(player.position, scanRange, platformLayer);
+
+    foreach (Collider col in hitColliders)
+    {
+      HiddenPlatform platform = col.GetComponent<HiddenPlatform>();
+      if (platform != null)
+      {
+        platform.Reveal();
+      }
+    }
+
+    Debug.Log("Scanned and found " + hitColliders.Length + " platforms");
+  }
+
+  void OnDrawGizmosSelected()
+  {
+    if (player != null)
+    {
+      Gizmos.color = Color.cyan;
+      Gizmos.DrawWireSphere(player.position, scanRange);
+    }
   }
 }
