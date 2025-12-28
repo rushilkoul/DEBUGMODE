@@ -10,20 +10,31 @@ public class GridManager : MonoBehaviour
 
   public Dictionary<Vector3Int, BlockLogic> blockMap = new();
 
+  void Start()
+  {
+    BuildGridFromScene();
+    ValidateFluid();
+  }
 
   public Vector3 SnapToGrid(Vector3 worldPos)
+  {
+    return new Vector3(
+        Mathf.RoundToInt(worldPos.x / cellSize) * cellSize,
+        Mathf.RoundToInt(worldPos.y / cellSize) * cellSize,
+        Mathf.RoundToInt(worldPos.z / cellSize) * cellSize
+    );
+  }
+
+  public bool IsInsideGrid(Vector3 worldPos)
   {
     int x = Mathf.RoundToInt(worldPos.x / cellSize);
     int y = Mathf.RoundToInt(worldPos.y / cellSize);
     int z = Mathf.RoundToInt(worldPos.z / cellSize);
 
-    return new Vector3(
-        x * cellSize,
-        y * cellSize,
-        z * cellSize
-    );
+    return x >= 0 && x < width &&
+           y >= 0 && y < height &&
+           z >= 0 && z < depth;
   }
-
   void OnDrawGizmos()
   {
     Color fillColor = new Color(0f, 1f, 1f, 0.04f);
@@ -64,93 +75,86 @@ public class GridManager : MonoBehaviour
       }
     }
   }
-  public bool IsInsideGrid(Vector3 worldPos)
+  public void BuildGridFromScene()
   {
-    int x = Mathf.RoundToInt(worldPos.x / cellSize);
-    int y = Mathf.RoundToInt(worldPos.y / cellSize);
-    int z = Mathf.RoundToInt(worldPos.z / cellSize);
+    blockMap.Clear();
 
-    return x >= 0 && x < width &&
-           y >= 0 && y < height &&
-           z >= 0 && z < depth;
+    BlockLogic[] blocks = Object.FindObjectsByType<BlockLogic>(
+        FindObjectsSortMode.None
+    );
+
+    foreach (var block in blocks)
+    {
+      Vector3 p = block.transform.position;
+      Vector3Int cell = new(
+          Mathf.RoundToInt(p.x / cellSize),
+          Mathf.RoundToInt(p.y / cellSize),
+          Mathf.RoundToInt(p.z / cellSize)
+      );
+
+      blockMap[cell] = block;
+    }
   }
-  public void ValidatePipes()
+
+  public void ValidateFluid()
   {
-    // clear all bugs first
+    // reset all
     foreach (var b in blockMap.Values)
-      b.SetBugged(false);
+      b.SetFluid(false);
 
-    // find source
-    Vector3Int sourcePos = Vector3Int.zero;
-    bool found = false;
+    Queue<Vector3Int> q = new();
+    HashSet<Vector3Int> visited = new();
 
+    // enqueue sources
     foreach (var kv in blockMap)
     {
       if (kv.Value.isSource)
       {
-        sourcePos = kv.Key;
-        found = true;
-        break;
+        kv.Value.SetFluid(true);
+        q.Enqueue(kv.Key);
+        visited.Add(kv.Key);
       }
     }
 
-    if (!found)
+    if (q.Count == 0)
     {
-      Debug.LogWarning("No SOURCE block found");
+      Debug.LogWarning("No SOURCE found");
       return;
     }
 
-    HashSet<Vector3Int> visited = new();
-    Queue<Vector3Int> q = new();
-
-    q.Enqueue(sourcePos);
-    visited.Add(sourcePos);
-
+    // BFS
     while (q.Count > 0)
     {
-      Vector3Int current = q.Dequeue();
-      BlockLogic pipe = blockMap[current];
+      Vector3Int cur = q.Dequeue();
+      BlockLogic curBlock = blockMap[cur];
 
       foreach (PipeDir dir in System.Enum.GetValues(typeof(PipeDir)))
       {
         if (dir == PipeDir.None) continue;
-        if (!pipe.connections.HasFlag(dir)) continue;
+        if (!curBlock.connections.HasFlag(dir)) continue;
 
-        Vector3Int nextPos = current + DirToOffset(dir);
+        Vector3Int next = cur + DirToOffset(dir);
+        if (!blockMap.ContainsKey(next)) continue;
+        if (visited.Contains(next)) continue;
 
-        if (!blockMap.ContainsKey(nextPos))
-          continue;
+        BlockLogic nextBlock = blockMap[next];
+        if (!nextBlock.connections.HasFlag(Opposite(dir))) continue;
 
-        BlockLogic next = blockMap[nextPos];
-
-        if (!next.connections.HasFlag(Opposite(dir)))
-          continue;
-
-        if (visited.Contains(nextPos))
-          continue;
-
-        visited.Add(nextPos);
-        q.Enqueue(nextPos);
+        visited.Add(next);
+        nextBlock.SetFluid(true);
+        q.Enqueue(next);
       }
-    }
-
-    // mark bugged pipes
-    foreach (var kv in blockMap)
-    {
-      if (!visited.Contains(kv.Key))
-        kv.Value.SetBugged(true);
     }
   }
 
-  // helpers
   Vector3Int DirToOffset(PipeDir dir)
   {
     return dir switch
     {
-      PipeDir.North => new Vector3Int(0, 0, 1),
-      PipeDir.South => new Vector3Int(0, 0, -1),
-      PipeDir.East => new Vector3Int(1, 0, 0),
-      PipeDir.West => new Vector3Int(-1, 0, 0),
+      PipeDir.North => Vector3Int.forward,
+      PipeDir.South => Vector3Int.back,
+      PipeDir.East => Vector3Int.right,
+      PipeDir.West => Vector3Int.left,
       _ => Vector3Int.zero
     };
   }
@@ -166,7 +170,4 @@ public class GridManager : MonoBehaviour
       _ => PipeDir.None
     };
   }
-
-
-
 }
