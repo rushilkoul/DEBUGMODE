@@ -121,7 +121,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -161,6 +161,14 @@ MonoBehaviour:
   effectSound: {fileID: 8300000, guid: 1496864236e2c3240bc6ec9d5942e3dc, type: 3}
   zoomFOV: 75
   smoothSpeed: 10
+  sensValueText: {fileID: 0}
+  resScaleValueText: {fileID: 0}
+  volValueText: {fileID: 0}
+  sensSlider: {fileID: 0}
+  resSlider: {fileID: 0}
+  volSlider: {fileID: 0}
+  viewModeDropdown: {fileID: 0}
+  resScaleSlider: {fileID: 0}
 --- !u!114 &6701824512603877357
 MonoBehaviour:
   m_ObjectHideFlags: 0

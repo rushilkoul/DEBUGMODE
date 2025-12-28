@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
   [SerializeField] private bool debugMode;
   [SerializeField] private float range = 50;
   [SerializeField] private Transform playerPos;
-  // Start is called once before the first execution of Update after the MonoBehaviour is created
 
   void Awake()
   {

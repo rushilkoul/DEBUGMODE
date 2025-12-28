@@ -1,4 +1,5 @@
 // using System.Diagnostics;
+using System;
 using UnityEngine;
 
 public class Interaction : MonoBehaviour
@@ -11,6 +12,8 @@ public class Interaction : MonoBehaviour
 
     public Transform player;
     public GameObject panelElement;
+    public InteractionBehaviour interaction;
+    public bool interactionActive = false;
 
     private bool _isPlayerInRange = false;
 
@@ -70,11 +73,15 @@ public class Interaction : MonoBehaviour
 
     void HandleInput()
     {
-        Debug.Log("test");
-        // nothing rn
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && interactionActive == true)
         {
-            Debug.Log("Start working!");
+            interactionActive = false;
+            interaction.OnDoubleInput();
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            interactionActive = true;
+            interaction.OnInput();
         }
     }
 
