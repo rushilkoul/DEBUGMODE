@@ -36,6 +36,11 @@ public class CameraView : MonoBehaviour
  public TMP_Dropdown viewModeDropdown;
  public UnityEngine.UI.Slider resScaleSlider;
 
+ [Header("Scanner Settings")]
+  public float scanRange = 20f;
+  public LayerMask platformLayer;
+  private System.Collections.Generic.List<HiddenPlatform> revealedPlatforms = new System.Collections.Generic.List<HiddenPlatform>();
+
 
   private GameManager GameManagerInstance;
   void Start()
@@ -60,6 +65,7 @@ public class CameraView : MonoBehaviour
         {
             audioSource.PlayOneShot(effectSound);
         }
+        ScanForPlatforms();
         }
 
         if (isHoldingRightClick)
@@ -144,4 +150,29 @@ public class CameraView : MonoBehaviour
     Cursor.lockState = CursorLockMode.Locked;
     Cursor.visible = false;
   }
+
+  void ScanForPlatforms()
+{
+    Collider[] hitColliders = Physics.OverlapSphere(player.position, scanRange, platformLayer);
+    
+    foreach (Collider col in hitColliders)
+    {
+        HiddenPlatform platform = col.GetComponent<HiddenPlatform>();
+        if (platform != null)
+        {
+            platform.Reveal();
+        }
+    }
+    
+    Debug.Log("Scanned and found " + hitColliders.Length + " platforms");
+}
+
+void OnDrawGizmosSelected()
+{
+    if (player != null)
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(player.position, scanRange);
+    }
+}
 }

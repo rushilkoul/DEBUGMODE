@@ -7,7 +7,7 @@ public class PlayerBlockHandler : MonoBehaviour
   public Transform holdPoint;
 
   [Header("Grid")]
-  public GridManager grid;
+  public Manager grid;
 
   [Header("Placement")]
   public LayerMask placementMask;
@@ -92,6 +92,7 @@ public class PlayerBlockHandler : MonoBehaviour
       return;
 
     Vector3 snappedPos = grid.SnapToGrid(placePoint);
+    GameObject placedBlock = heldBlock;
 
     heldBlock.transform.SetParent(null, true);
     heldBlock.transform.position = snappedPos;
@@ -104,6 +105,15 @@ public class PlayerBlockHandler : MonoBehaviour
 
     heldBlock = null;
     heldCollider = null;
+    Collider[] nearby = Physics.OverlapSphere(placedBlock.transform.position, 5f);
+    foreach (Collider col in nearby)
+    {
+        StackOverflowBox overflow = col.GetComponent<StackOverflowBox>();
+        if (overflow != null)
+        {
+            overflow.OnBoxPlacedNearby();
+        }
+    }
   }
 
 }
