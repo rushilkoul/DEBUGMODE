@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8637179993578403998}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BoxStraight
-  m_TagString: Untagged
+  m_TagString: Pickable Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 1477504982646616502}
   - component: {fileID: 6553277945453240052}
   - component: {fileID: 616830568326276164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BoxVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
