@@ -2,12 +2,21 @@ using UnityEngine;
 
 public class Interaction_SETTINGS : InteractionBehaviour
 {
+    [SerializeField] GameObject viewCam;
+    [SerializeField] GameObject leavePanel;
+    [SerializeField] GameObject SettingsGFX;
     public override void OnInput()
     {
-        Debug.Log("OPEN SETTINGS");
+        Cursor.lockState = CursorLockMode.None; 
+        viewCam.SetActive(true);
+        leavePanel.SetActive(true);
+        SettingsGFX.SetActive(false);
     }
     public override void OnDoubleInput()
     {
-        // viewCam.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked; 
+        viewCam.SetActive(false);
+        leavePanel.SetActive(false);
+        SettingsGFX.SetActive(true);
     }
 }
