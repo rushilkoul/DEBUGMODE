@@ -34,8 +34,9 @@ public class PlayerBlockHandler : MonoBehaviour
     {
       // rotate left
       if (Input.GetKeyDown(KeyCode.Q))
+      {
         RotateHeld(-90f);
-
+      }
       // rotate right
       if (Input.GetKeyDown(KeyCode.R))
         RotateHeld(90f);
@@ -46,6 +47,15 @@ public class PlayerBlockHandler : MonoBehaviour
   {
     storedRotation *= Quaternion.Euler(0f, angle, 0f);
     heldBlock.transform.rotation = storedRotation;
+
+    BlockLogic logic = heldBlock.GetComponent<BlockLogic>();
+    if (logic != null)
+    {
+      if (angle < 0)
+        logic.RotateLeft();
+      else
+        logic.RotateRight();
+    }
   }
 
   void TryPickup()
@@ -101,6 +111,8 @@ public class PlayerBlockHandler : MonoBehaviour
     // re-enable collider
     if (heldCollider != null)
       heldCollider.enabled = true;
+
+    grid.ValidatePipes();
 
     heldBlock = null;
     heldCollider = null;

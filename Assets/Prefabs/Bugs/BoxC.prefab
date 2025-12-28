@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8637179993578403998}
+  - component: {fileID: 8891148709308668667}
   m_Layer: 7
   m_Name: BoxC
   m_TagString: Pickable Block
@@ -36,6 +37,21 @@ Transform:
   - {fileID: 9034822706580348368}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8891148709308668667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446893695261533924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf50bc9581f582c479fb256c59262d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockLogic
+  connections: 12
+  isSource: 0
+  isBugged: 0
 --- !u!1 &770321183970193676
 GameObject:
   m_ObjectHideFlags: 0

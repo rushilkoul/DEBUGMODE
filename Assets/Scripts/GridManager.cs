@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
@@ -6,6 +7,9 @@ public class GridManager : MonoBehaviour
   public int height = 5;
   public int depth = 10;
   public float cellSize = 1.7778f;
+
+  public Dictionary<Vector3Int, BlockLogic> blockMap = new();
+
 
   public Vector3 SnapToGrid(Vector3 worldPos)
   {
@@ -76,5 +80,99 @@ public class GridManager : MonoBehaviour
            y >= 0 && y < height &&
            z >= 0 && z < depth;
   }
+  public void ValidatePipes()
+  {
+    // clear all bugs first
+    foreach (var b in blockMap.Values)
+      b.SetBugged(false);
+
+    // find source
+    Vector3Int sourcePos = Vector3Int.zero;
+    bool found = false;
+
+    foreach (var kv in blockMap)
+    {
+      if (kv.Value.isSource)
+      {
+        sourcePos = kv.Key;
+        found = true;
+        break;
+      }
+    }
+
+    if (!found)
+    {
+      Debug.LogWarning("No SOURCE block found");
+      return;
+    }
+
+    HashSet<Vector3Int> visited = new();
+    Queue<Vector3Int> q = new();
+
+    q.Enqueue(sourcePos);
+    visited.Add(sourcePos);
+
+    while (q.Count > 0)
+    {
+      Vector3Int current = q.Dequeue();
+      BlockLogic pipe = blockMap[current];
+
+      foreach (PipeDir dir in System.Enum.GetValues(typeof(PipeDir)))
+      {
+        if (dir == PipeDir.None) continue;
+        if (!pipe.connections.HasFlag(dir)) continue;
+
+        Vector3Int nextPos = current + DirToOffset(dir);
+
+        if (!blockMap.ContainsKey(nextPos))
+          continue;
+
+        BlockLogic next = blockMap[nextPos];
+
+        if (!next.connections.HasFlag(Opposite(dir)))
+          continue;
+
+        if (visited.Contains(nextPos))
+          continue;
+
+        visited.Add(nextPos);
+        q.Enqueue(nextPos);
+      }
+    }
+
+    // mark bugged pipes
+    foreach (var kv in blockMap)
+    {
+      if (!visited.Contains(kv.Key))
+        kv.Value.SetBugged(true);
+    }
+  }
+
+  // helpers
+  Vector3Int DirToOffset(PipeDir dir)
+  {
+    return dir switch
+    {
+      PipeDir.North => new Vector3Int(0, 0, 1),
+      PipeDir.South => new Vector3Int(0, 0, -1),
+      PipeDir.East => new Vector3Int(1, 0, 0),
+      PipeDir.West => new Vector3Int(-1, 0, 0),
+      _ => Vector3Int.zero
+    };
+  }
+
+  PipeDir Opposite(PipeDir dir)
+  {
+    return dir switch
+    {
+      PipeDir.North => PipeDir.South,
+      PipeDir.South => PipeDir.North,
+      PipeDir.East => PipeDir.West,
+      PipeDir.West => PipeDir.East,
+      _ => PipeDir.None
+    };
+  }
+
+
 
 }
