@@ -1,18 +1,23 @@
 using UnityEngine;
 
-
 public class Room_Move : MonoBehaviour
 {
     public float speed = 0.5f;
-    public Transform player;
+    public float idlespeed = 0.1f;
+    private Transform player;
     private Vector3 lastpos;
     
     private Material material;
     private Vector2 offset;
+    private Vector2 lastDirection; 
     
     void Start()
     {
-        lastpos= player.position;
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        player = playerObject.transform;
+        lastpos = player.position;
+        lastDirection = Vector2.zero;
+        
         Renderer renderer = GetComponent<Renderer>();
         
         if (renderer != null)
@@ -24,13 +29,28 @@ public class Room_Move : MonoBehaviour
     
     void Update()
     {
-        if (material != null)
+        if (material != null && player != null)
         {
-            Vector3 movement= player.position- lastpos;
-            offset.x= speed*movement.x;
-            offset.y += speed*movement.z;
+            Vector3 movement = player.position - lastpos;
+            
+            if (movement.magnitude > 0.001f) 
+            {
+                offset.x += speed * movement.x;
+                offset.y += speed * movement.z; 
+                
+                lastDirection = new Vector2(movement.x, movement.z).normalized;
+            }
+            else
+            {
+                if (lastDirection != Vector2.zero)
+                {
+                    offset.x += idlespeed * lastDirection.x * Time.deltaTime;
+                    offset.y += idlespeed * lastDirection.y * Time.deltaTime;
+                }
+            }
+            
             material.mainTextureOffset = -offset;
-            lastpos= player.position;
+            lastpos = player.position;
         }
     }
 }
