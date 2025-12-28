@@ -1,33 +1,25 @@
 using UnityEngine;
 
-[System.Flags]
-public enum PipeDir
-{
-  None = 0,
-  North = 1, // +Z
-  East = 2, // +X
-  South = 4, // -Z
-  West = 8  // -X
-}
-
 public class BlockLogic : MonoBehaviour
 {
-  [Header("Pipe Connections")]
+  [Header("Pipe")]
   public PipeDir connections;
 
-  [Header("Flags")]
+  [Header("State")]
   public bool isSource;
+  public bool hasFluid;
   public bool isBugged;
 
-  public void SetBugged(bool bugged)
-  {
-    isBugged = bugged;
+  [Header("Bug Visual")]
+  public GameObject bug;
 
-    // TEMP visual feedback
-    var r = GetComponentInChildren<Renderer>();
-    if (r != null)
-      r.material.SetColor("_EmissionColor",
-          bugged ? Color.red : Color.cyan);
+  public void SetFluid(bool value)
+  {
+    hasFluid = value;
+    isBugged = !value && !isSource;
+
+    if (bug != null)
+      bug.SetActive(isBugged);
   }
 
   public void RotateLeft()
