@@ -22,7 +22,6 @@ public class GridManager : MonoBehaviour
 
   void OnDrawGizmos()
   {
-    // Base colors (soft cyan)
     Color fillColor = new Color(0f, 1f, 1f, 0.04f);
     Color wireColor = new Color(0f, 1f, 1f, 0.18f);
 
@@ -41,11 +40,8 @@ public class GridManager : MonoBehaviour
               z * cellSize
           );
 
-          // Optional distance fade
           float dist = Vector3.Distance(camPos, pos);
           float fade = Mathf.Clamp01(1f - dist / 12f);
-
-          // Draw transparent fill
           Gizmos.color = new Color(
               fillColor.r,
               fillColor.g,
@@ -53,8 +49,6 @@ public class GridManager : MonoBehaviour
               fillColor.a * fade
           );
           Gizmos.DrawCube(pos, Vector3.one * cellSize);
-
-          // Draw outline
           Gizmos.color = new Color(
               wireColor.r,
               wireColor.g,
