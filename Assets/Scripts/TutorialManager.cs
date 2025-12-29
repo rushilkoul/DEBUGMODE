@@ -72,6 +72,19 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
+    public void SetStep(int index)
+    {
+        if (index < 0 || index >= steps.Length)
+        {
+            tooltipText.text = "";
+            currentIndex = steps.Length;
+            return;
+        }
+
+        currentIndex = index;
+        ShowStep(currentIndex);
+    }
+
     private void ShowStep(int index)
     {
         currentIndex = index;
