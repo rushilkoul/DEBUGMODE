@@ -111,6 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::View
   player: {fileID: 2003418224686393236}
   sens: 300
+  playerMovement: {fileID: 3491061743952443090}
+  sprintFOVOffset: 15
   overrideVolume: {fileID: 8403993836376332109}
   playerCamera: {fileID: 5534952419491037076}
   audioSource: {fileID: 9060019583230436149}
@@ -462,7 +464,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4458234276460236966}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6103462d1fa4c0d4a84c6a8ec96a2e33, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -519,16 +521,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   rb: {fileID: 5419354443537572242}
   orientation: {fileID: 6197365491970396947}
-  moveSpeed: 4
-  jumpForce: 5
+  moveSpeed: 5
+  sprintSpeed: 7.5
+  jumpForce: 12
   groundDrag: 6
   airMultiplier: 0.4
-  GravityScale: 5
+  GravityScale: 16
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   rayDistance: 1.1
   isGrounded: 0
+  isSprinting: 0
 --- !u!1 &5407339206379384174
 GameObject:
   m_ObjectHideFlags: 0
