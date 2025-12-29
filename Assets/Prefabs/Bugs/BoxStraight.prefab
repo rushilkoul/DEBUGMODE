@@ -245,12 +245,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BlockLogic
   connections: 10
   isSource: 0
+  isDrain: 0
   hasFluid: 0
   isBugged: 0
   pipes:
   - {fileID: 8558306762748697113}
-  normalMaterial: {fileID: 2100000, guid: b10292e931aaf194aad61534de919e72, type: 2}
-  buggedMaterial: {fileID: 2100000, guid: 3084a90619a3ca14f83cb21f35af8f95, type: 2}
+  normalMaterial: {fileID: 2100000, guid: d56daa5eaa44be34a8223107cf082837, type: 2}
+  buggedMaterial: {fileID: 2100000, guid: 95c419c4fd715ab40ae6c44660de19be, type: 2}
   buggedTextParent: {fileID: 7227467138383891657}
 --- !u!1 &770321183970193676
 GameObject:
@@ -502,7 +503,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 613c9353fa7d00a409732a428c943f7a, type: 2}
+  - {fileID: 2100000, guid: 3c11f29638cd2864f87c3937073fbc45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -659,7 +660,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b10292e931aaf194aad61534de919e72, type: 2}
+  - {fileID: 2100000, guid: d56daa5eaa44be34a8223107cf082837, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

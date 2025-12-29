@@ -16,6 +16,9 @@
             "m_Id": "6cc5f0673aeb422b89f085f459c1dc60"
         },
         {
+            "m_Id": "9718480e4b694ad39981f4786b5ddf2e"
+        },
+        {
             "m_Id": "eb56b1be1316460386c374b5cc79a20c"
         }
     ],
@@ -418,8 +421,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 1036.0,
-            "y": -73.99999237060547
+            "x": 1389.9998779296875,
+            "y": -288.9999694824219
         },
         "m_Blocks": [
             {
@@ -1950,6 +1953,9 @@
         },
         {
             "m_Id": "eb56b1be1316460386c374b5cc79a20c"
+        },
+        {
+            "m_Id": "9718480e4b694ad39981f4786b5ddf2e"
         }
     ]
 }
@@ -2262,6 +2268,50 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "9718480e4b694ad39981f4786b5ddf2e",
+    "m_Guid": {
+        "m_GuidSerialized": "40a77128-39d4-4e29-ac39-5744155ceaea"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "EmissionIntensity",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "EmissionIntensity",
+    "m_DefaultReferenceName": "_EmissionIntensity_1",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": 2.0,
+    "m_FloatType": 0,
+    "m_LiteralFloatMode": false,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
