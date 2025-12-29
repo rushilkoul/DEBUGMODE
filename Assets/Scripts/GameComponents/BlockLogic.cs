@@ -7,6 +7,7 @@ public class BlockLogic : MonoBehaviour
 
   [Header("State")]
   public bool isSource;
+  public bool isDrain;
   public bool hasFluid;
   public bool isBugged;
 
@@ -21,10 +22,15 @@ public class BlockLogic : MonoBehaviour
     hasFluid = value;
     isBugged = !value && !isSource;
 
-    if(buggedTextParent != null)
+    if (isDrain && hasFluid)
+    {
+      Debug.Log("Level complete");
+    }
+
+    if (buggedTextParent != null)
       buggedTextParent.SetActive(isBugged);
 
-    if(pipes != null)
+    if (pipes != null)
     {
       foreach (var p in pipes)
       {
