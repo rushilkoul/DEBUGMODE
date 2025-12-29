@@ -8,7 +8,6 @@ public class StackOverflowBox : MonoBehaviour
     
     private bool isFixed = false;
     private float detectionCooldown = 0f;
-    public GameObject wallToCollapse;
     
     void Start()
     {
@@ -63,11 +62,6 @@ public class StackOverflowBox : MonoBehaviour
     {
         rend.material.color = Color.green;
     }
-    
-    if (wallToCollapse != null)
-    {
-        CollapseWall();
-    }
 }
     
     void OnDrawGizmosSelected()
@@ -79,24 +73,5 @@ public class StackOverflowBox : MonoBehaviour
     {
         detectionCooldown = 0.5f;
     }
-    void CollapseWall()
-{
-    
-    Rigidbody rb = wallToCollapse.GetComponent<Rigidbody>();
-    if (rb == null)
-    {
-        rb = wallToCollapse.AddComponent<Rigidbody>();
-    }
-    
-    rb.isKinematic = false; 
-    rb.useGravity = true;   
-    
-    
-    rb.AddForce(Vector3.forward * 2f, ForceMode.Impulse);
-    
-    
-    Destroy(wallToCollapse, 3f); 
-    
-    Debug.Log("Wall collapsed!");
-}
+
 }

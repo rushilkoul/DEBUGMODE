@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4613885443218059548}
   - component: {fileID: 6555717404280478826}
   - component: {fileID: 2846409313356086413}
-  - component: {fileID: 699959184923903227}
-  m_Layer: 0
+  - component: {fileID: 1668463482154589933}
+  m_Layer: 7
   m_Name: StackOverflow
-  m_TagString: Untagged
+  m_TagString: Pickable Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &699959184923903227
+--- !u!114 &1668463482154589933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,17 +124,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 919133676609425625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a89c3ef3a51a14ca62d1aca2bea4df, type: 3}
+  m_Script: {fileID: 11500000, guid: 944fc3c3d203c2045bf6477e18cc46b7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interaction
-  radius: 3
-  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
-  showOnlyWhenSelected: 1
-  fillOpacity: 0.2
-  player: {fileID: 0}
-  panelElement: {fileID: 0}
-  interaction: {fileID: 0}
-  interactionActive: 0
+  m_EditorClassIdentifier: Assembly-CSharp::StackOverflowBox
+  detectionRange: 2
+  fixBoxTag: Pickable Block
+  overflowParticles: {fileID: 5365096485481517065}
+  wallToCollapse: {fileID: 0}
 --- !u!1 &3088623702675515558
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,7 +5096,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 18ab8fbb1908cf946a56c23424360392, type: 3}
+  - {fileID: 2100000, guid: 3c11f29638cd2864f87c3937073fbc45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
