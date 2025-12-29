@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Orange
-    second: {fileID: 2100000, guid: 7ce45c46beef40844aea38fe7bfea1f7, type: 2}
+    second: {fileID: 2100000, guid: 824555ce24029f546b32a0b5716e8565, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
