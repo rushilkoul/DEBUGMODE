@@ -11,15 +11,28 @@ public class BlockLogic : MonoBehaviour
   public bool isBugged;
 
   [Header("Bug Visual")]
-  public GameObject bug;
+  public GameObject[] pipes;
+  public Material normalMaterial;
+  public Material buggedMaterial;
+  public GameObject buggedTextParent;
 
   public void SetFluid(bool value)
   {
     hasFluid = value;
     isBugged = !value && !isSource;
 
-    if (bug != null)
-      bug.SetActive(isBugged);
+    if(buggedTextParent != null)
+      buggedTextParent.SetActive(isBugged);
+
+    if(pipes != null)
+    {
+      foreach (var p in pipes)
+      {
+        var rend = p.GetComponent<Renderer>();
+        if (rend != null)
+          rend.material = isBugged ? buggedMaterial : normalMaterial;
+      }
+    }
   }
 
   public void RotateLeft()

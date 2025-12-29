@@ -161,14 +161,10 @@ MonoBehaviour:
   effectSound: {fileID: 8300000, guid: 1496864236e2c3240bc6ec9d5942e3dc, type: 3}
   zoomFOV: 75
   smoothSpeed: 10
-  sensValueText: {fileID: 0}
-  resScaleValueText: {fileID: 0}
-  volValueText: {fileID: 0}
-  sensSlider: {fileID: 0}
-  resSlider: {fileID: 0}
-  volSlider: {fileID: 0}
-  viewModeDropdown: {fileID: 0}
-  resScaleSlider: {fileID: 0}
+  scanRange: 20
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &6701824512603877357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,6 +361,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6197365491970396947}
+  - {fileID: 779559870680935576}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &671026222248865892
@@ -440,3 +437,34 @@ MonoBehaviour:
     m_Bits: 64
   rayDistance: 1.1
   isGrounded: 0
+--- !u!1 &5407339206379384174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779559870680935576}
+  m_Layer: 0
+  m_Name: HoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &779559870680935576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407339206379384174}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.14373079, y: -0.30709982, z: -0.05078453, w: 0.9393892}
+  m_LocalPosition: {x: -0.014, y: 0.52, z: 0.754}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2003418224686393236}
+  m_LocalEulerAnglesHint: {x: 13.818, y: -37.532, z: -10.904}

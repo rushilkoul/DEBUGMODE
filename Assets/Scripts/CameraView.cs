@@ -19,31 +19,6 @@ public class CameraView : MonoBehaviour
   public float zoomFOV = 40f;
   public float smoothSpeed = 10f;
 
-  [Header("UI Value Displays")]
-
-  public TextMeshProUGUI sensValueText;
-
-  public TextMeshProUGUI resScaleValueText;
-
-  public TextMeshProUGUI volValueText;
-
-
-
-  [Header("UI Controls")]
-
-  public UnityEngine.UI.Slider sensSlider;
-
-  public UnityEngine.UI.Slider resSlider;
-
-  public UnityEngine.UI.Slider volSlider;
-
-
-
-  [Header("Graphics UI")]
-
-  public TMP_Dropdown viewModeDropdown;
-
-  public UnityEngine.UI.Slider resScaleSlider;
 
 
 
