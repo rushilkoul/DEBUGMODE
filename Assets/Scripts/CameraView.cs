@@ -10,7 +10,7 @@ public class CameraView : MonoBehaviour
   float xRotation = 0f;
 
   [Header("Sprinting FOV Settings")]
-  public Movement playerMovement; 
+  public Movement playerMovement;
   public float sprintFOVOffset = 15f;
 
   [Header("Effect References")]
@@ -48,6 +48,7 @@ public class CameraView : MonoBehaviour
     if (GameManagerInstance != null)
     {
       bool isHoldingRightClick = Input.GetMouseButton(1);
+      bool isSprinting = (playerMovement != null && playerMovement.isSprinting);
 
       if (Input.GetMouseButtonDown(1))
       {
@@ -56,26 +57,25 @@ public class CameraView : MonoBehaviour
           audioSource.PlayOneShot(effectSound);
         }
       }
-      float targetFOV = isHoldingRightClick ? zoomFOV : defaultFOV;
+      float calculatedFOV = isHoldingRightClick ? zoomFOV : defaultFOV;
+      if (isSprinting)
+      {
+        calculatedFOV += sprintFOVOffset;
+      }
+      
+      targetWeight = isHoldingRightClick ? 1f : 0f;
 
       if (isHoldingRightClick)
       {
         GameManagerInstance.setDebugMode(true);
-        targetWeight = 1f;
- 
-      }
-      if (playerMovement != null && playerMovement.isSprinting)
-      {
-      targetFOV += sprintFOVOffset;
-      targetWeight = 0f;
-      GameManagerInstance.setDebugMode(false);
       }
       else
       {
         GameManagerInstance.setDebugMode(false);
-        targetWeight = 0f;
       }
-      playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, targetFOV, Time.deltaTime * smoothSpeed);
+
+      playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, calculatedFOV, Time.deltaTime * smoothSpeed);
+
       if (overrideVolume != null)
       {
         overrideVolume.weight = Mathf.Lerp(overrideVolume.weight, targetWeight, Time.deltaTime * smoothSpeed);
@@ -84,7 +84,6 @@ public class CameraView : MonoBehaviour
 
     HandleMouseLook();
   }
-
   void HandleRightClickInteraction()
   {
     bool isHoldingRightClick = Input.GetMouseButton(1);
