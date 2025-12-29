@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SetVisibleInBugged : MonoBehaviour
@@ -6,13 +7,13 @@ public class SetVisibleInBugged : MonoBehaviour
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
-    gameManagerInstance = GameManager.Instance;
+    gameManagerInstance = GameManager.Instance; GameManager.Instance.OnDebugModeChanged.AddListener(SetChildren);
+
   }
 
-  // Update is called once per frame
-  void Update()
+  private void SetChildren(bool debugMode)
   {
-    if (gameManagerInstance.getDebugMode())
+    if (debugMode)
     {
       foreach (Transform child in transform)
       {
@@ -28,5 +29,10 @@ public class SetVisibleInBugged : MonoBehaviour
       {
         child.gameObject.SetActive(false);
       }
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
   }
 }
