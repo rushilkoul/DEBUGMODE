@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8673043297776392137
+--- !u!114 &-7462824226262670867
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,52 +9,163 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a81bcacc415a1f743bfdf703afc52027, type: 3}
-  m_Name: GradientSky
-  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.GradientSky
+  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
+  m_Name: VisualEnvironment
+  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.VisualEnvironment
   active: 1
-  rotation:
+  skyType:
+    m_OverrideState: 1
+    m_Value: 0
+  cloudType:
     m_OverrideState: 0
     m_Value: 0
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0
-  multiplier:
+  skyAmbientMode:
     m_OverrideState: 0
     m_Value: 1
-  upperHemisphereLuxValue:
+  planetRadius:
+    m_OverrideState: 0
+    m_Value: 6378.1
+  renderingSpace:
     m_OverrideState: 0
     m_Value: 1
-  upperHemisphereLuxColor:
-    m_OverrideState: 0
-    m_Value: {x: 0, y: 0, z: 0}
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
+  centerMode:
     m_OverrideState: 0
     m_Value: 0
-  updatePeriod:
+  planetCenter:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: -6378.1, z: 0}
+  windOrientation:
     m_OverrideState: 0
     m_Value: 0
-  includeSunInBaking:
+  windSpeed:
     m_OverrideState: 0
     m_Value: 0
-  top:
+  fogType:
+    m_OverrideState: 0
+    m_Value: 0
+  m_Version: 1
+--- !u!114 &-3102571485919289569
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384c4d03a551c44448145f4093304119, type: 3}
+  m_Name: ScreenSpaceReflection
+  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.ScreenSpaceReflection
+  active: 1
+  quality:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-  middle:
+    m_Value: 2
+  enabled:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-  bottom:
+    m_Value: 1
+  enabledTransparent:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-  gradientDiffusion:
+    m_Value: 1
+  tracing:
     m_OverrideState: 0
     m_Value: 1
+  m_MinSmoothness:
+    m_OverrideState: 0
+    m_Value: 0.9
+  m_SmoothnessFadeStart:
+    m_OverrideState: 0
+    m_Value: 0.9
+  reflectSky:
+    m_OverrideState: 1
+    m_Value: 0
+  usedAlgorithm:
+    m_OverrideState: 1
+    m_Value: 1
+  depthBufferThickness:
+    m_OverrideState: 1
+    m_Value: 0.01
+  screenFadeDistance:
+    m_OverrideState: 0
+    m_Value: 0.1
+  accumulationFactor:
+    m_OverrideState: 0
+    m_Value: 0.75
+  biasFactor:
+    m_OverrideState: 0
+    m_Value: 0.5
+  speedRejectionParam:
+    m_OverrideState: 0
+    m_Value: 0.5
+  speedRejectionScalerFactor:
+    m_OverrideState: 0
+    m_Value: 0.2
+  speedSmoothReject:
+    m_OverrideState: 0
+    m_Value: 0
+  speedSurfaceOnly:
+    m_OverrideState: 0
+    m_Value: 1
+  speedTargetOnly:
+    m_OverrideState: 0
+    m_Value: 1
+  enableWorldSpeedRejection:
+    m_OverrideState: 0
+    m_Value: 0
+  m_RayMaxIterations:
+    m_OverrideState: 1
+    m_Value: 64
+  rayMiss:
+    m_OverrideState: 0
+    m_Value: 3
+  lastBounceFallbackHierarchy:
+    m_OverrideState: 0
+    m_Value: 3
+  ambientProbeDimmer:
+    m_OverrideState: 0
+    m_Value: 1
+  layerMask:
+    m_OverrideState: 0
+    m_Value:
+      serializedVersion: 2
+      m_Bits: 4294967295
+  textureLodBias:
+    m_OverrideState: 0
+    m_Value: 1
+  m_RayLength:
+    m_OverrideState: 0
+    m_Value: 50
+  m_ClampValue:
+    m_OverrideState: 0
+    m_Value: 100
+  m_Denoise:
+    m_OverrideState: 0
+    m_Value: 1
+  m_DenoiserRadius:
+    m_OverrideState: 0
+    m_Value: 0.75
+  m_DenoiserAntiFlickeringStrength:
+    m_OverrideState: 0
+    m_Value: 1
+  mode:
+    m_OverrideState: 0
+    m_Value: 2
+  m_FullResolution:
+    m_OverrideState: 0
+    m_Value: 0
+  sampleCount:
+    m_OverrideState: 0
+    m_Value: 1
+  bounceCount:
+    m_OverrideState: 0
+    m_Value: 1
+  m_RayMaxIterationsRT:
+    m_OverrideState: 0
+    m_Value: 48
+  adaptiveProbeVolumesLayerMask:
+    m_OverrideState: 0
+    m_Value:
+      serializedVersion: 0
+      m_Bits: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,4 +179,5 @@ MonoBehaviour:
   m_Name: Global Volume Profile
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.VolumeProfile
   components:
-  - {fileID: -8673043297776392137}
+  - {fileID: -7462824226262670867}
+  - {fileID: -3102571485919289569}
