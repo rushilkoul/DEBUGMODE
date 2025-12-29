@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,9 +7,12 @@ public class GameManager : MonoBehaviour
   [SerializeField] private bool debugMode;
   [SerializeField] private float range = 50;
   [SerializeField] private Transform playerPos;
+  public UnityEvent<bool> OnDebugModeChanged;
 
   void Awake()
   {
+    OnDebugModeChanged ??= new UnityEvent<bool>();
+
     if (Instance == null)
     {
       Instance = this;
@@ -34,5 +38,7 @@ public class GameManager : MonoBehaviour
   public void setDebugMode(bool val)
   {
     debugMode = val;
+    OnDebugModeChanged.Invoke(debugMode);
+
   }
 }
