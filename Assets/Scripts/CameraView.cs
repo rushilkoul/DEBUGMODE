@@ -6,8 +6,12 @@ public class CameraView : MonoBehaviour
 {
   [Header("Camera Viewing")]
   public Transform player;
-  public float sens = 1f; // default sens
+  public float sens = 1f;
   float xRotation = 0f;
+
+  [Header("Sprinting FOV Settings")]
+  public Movement playerMovement; 
+  public float sprintFOVOffset = 15f;
 
   [Header("Effect References")]
   public Volume overrideVolume;
@@ -52,21 +56,26 @@ public class CameraView : MonoBehaviour
           audioSource.PlayOneShot(effectSound);
         }
       }
+      float targetFOV = isHoldingRightClick ? zoomFOV : defaultFOV;
 
       if (isHoldingRightClick)
       {
         GameManagerInstance.setDebugMode(true);
         targetWeight = 1f;
-
-        playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, zoomFOV, Time.deltaTime * smoothSpeed);
+ 
+      }
+      if (playerMovement != null && playerMovement.isSprinting)
+      {
+      targetFOV += sprintFOVOffset;
+      targetWeight = 0f;
+      GameManagerInstance.setDebugMode(false);
       }
       else
       {
         GameManagerInstance.setDebugMode(false);
         targetWeight = 0f;
-
-        playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, defaultFOV, Time.deltaTime * smoothSpeed);
       }
+      playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, targetFOV, Time.deltaTime * smoothSpeed);
       if (overrideVolume != null)
       {
         overrideVolume.weight = Mathf.Lerp(overrideVolume.weight, targetWeight, Time.deltaTime * smoothSpeed);

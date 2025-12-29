@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 
   [Header("Movement Stats")]
   public float moveSpeed = 6f;
+  public float sprintSpeed = 10f;
   public float jumpForce = 12f;
   public float groundDrag = 6f;
   public float airMultiplier = 0.4f;
@@ -22,9 +23,13 @@ public class Movement : MonoBehaviour
   float verticalInput;
   Vector3 moveDirection;
 
+  private float currentSpeed;
+  public bool isSprinting;
+
 
   void Start()
   {
+    currentSpeed= moveSpeed;
     if (rb == null) rb = GetComponent<Rigidbody>();
     rb.freezeRotation = true;
   }
@@ -58,6 +63,17 @@ public class Movement : MonoBehaviour
     horizontalInput = Input.GetAxisRaw("Horizontal");
     verticalInput = Input.GetAxisRaw("Vertical");
 
+    if (Input.GetKey(KeyCode.LeftShift) && isGrounded)
+    {
+        currentSpeed = sprintSpeed;
+        isSprinting = true;
+    }
+    else
+    {
+        currentSpeed = moveSpeed;
+        isSprinting = false;
+    }
+
     if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
     {
       Jump();
@@ -70,7 +86,7 @@ public class Movement : MonoBehaviour
     
     if (moveDirection.magnitude > 0.1f)
     {
-        Vector3 targetVelocity = moveDirection.normalized * moveSpeed;
+        Vector3 targetVelocity = moveDirection.normalized * currentSpeed;
         
         if (isGrounded)
         {
