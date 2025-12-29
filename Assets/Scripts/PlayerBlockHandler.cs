@@ -7,7 +7,7 @@ public class PlayerBlockHandler : MonoBehaviour
   public Transform holdPoint;
 
   [Header("Grid")]
-  public Manager grid;
+  public GridManager grid;
 
   [Header("Placement")]
   public LayerMask placementMask;
@@ -21,6 +21,11 @@ public class PlayerBlockHandler : MonoBehaviour
   Collider heldCollider;
   Vector3Int lastCell;
 
+  void Start()
+  {
+    grid.ValidateFluid();
+  }
+
   void Update()
   {
     if (Input.GetKeyDown(KeyCode.E))
@@ -29,6 +34,7 @@ public class PlayerBlockHandler : MonoBehaviour
         TryPickup();
       else
         TryDrop();
+      grid.ValidateFluid();
     }
 
     if (heldBlock != null)
@@ -56,11 +62,13 @@ public class PlayerBlockHandler : MonoBehaviour
 
   void TryPickup()
   {
+    Debug.Log("Tried Pickup");
     Ray ray = new(transform.position, transform.forward);
     if (!Physics.Raycast(ray, out RaycastHit hit, pickupRange))
       return;
 
-    Transform root = hit.collider.transform.root;
+    Transform root = hit.collider.transform.parent;
+    Debug.Log(root);
     if (!root.CompareTag("Pickable Block"))
       return;
 
@@ -99,7 +107,6 @@ public class PlayerBlockHandler : MonoBehaviour
       return;
 
     Vector3 snappedPos = grid.SnapToGrid(placePoint);
-    GameObject placedBlock = heldBlock;
 
     heldBlock.transform.SetParent(null, true);
     heldBlock.transform.position = snappedPos;
@@ -119,17 +126,26 @@ public class PlayerBlockHandler : MonoBehaviour
 
     heldBlock = null;
     heldCollider = null;
-    Collider[] nearby = Physics.OverlapSphere(placedBlock.transform.position, 5f);
-    foreach (Collider col in nearby)
-    {
-      StackOverflowBox overflow = col.GetComponent<StackOverflowBox>();
-      if (overflow != null)
-      {
-        overflow.OnBoxPlacedNearby();
-      }
-    }
-  }
 
-  grid.ValidateFluid();
+    GameObject placedBlock = heldBlock;
+
+    Collider[] nearby = Physics.OverlapSphere(placedBlock.transform.position, 5f);
+
+    foreach (Collider col in nearby)
+
+    {
+
+      StackOverflowBox overflow = col.GetComponent<StackOverflowBox>();
+
+      if (overflow != null)
+
+      {
+
+        overflow.OnBoxPlacedNearby();
+
+      }
+
+    }
+
   }
 }

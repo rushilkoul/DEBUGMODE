@@ -49,8 +49,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockLogic
   connections: 10
-  isSource: 0
+  isSource: 1
+  hasFluid: 0
   isBugged: 0
+  bug: {fileID: 0}
 --- !u!1 &770321183970193676
 GameObject:
   m_ObjectHideFlags: 0

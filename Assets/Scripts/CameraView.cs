@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -17,6 +18,44 @@ public class CameraView : MonoBehaviour
   [Header("Zoom Settings")]
   public float zoomFOV = 40f;
   public float smoothSpeed = 10f;
+
+  [Header("UI Value Displays")]
+
+  public TextMeshProUGUI sensValueText;
+
+  public TextMeshProUGUI resScaleValueText;
+
+  public TextMeshProUGUI volValueText;
+
+
+
+  [Header("UI Controls")]
+
+  public UnityEngine.UI.Slider sensSlider;
+
+  public UnityEngine.UI.Slider resSlider;
+
+  public UnityEngine.UI.Slider volSlider;
+
+
+
+  [Header("Graphics UI")]
+
+  public TMP_Dropdown viewModeDropdown;
+
+  public UnityEngine.UI.Slider resScaleSlider;
+
+
+
+  [Header("Scanner Settings")]
+
+  public float scanRange = 20f;
+
+  public LayerMask platformLayer;
+
+  private System.Collections.Generic.List<HiddenPlatform> revealedPlatforms = new System.Collections.Generic.List<HiddenPlatform>();
+
+
 
   private float defaultFOV;
   private float targetWeight;
