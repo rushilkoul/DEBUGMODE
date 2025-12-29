@@ -58,8 +58,6 @@ public class StackOverflowBox : MonoBehaviour
         overflowParticles.Clear();
     }
     
-    Destroy(fixBox, 0.5f);
-    
     Renderer rend = GetComponent<Renderer>();
     if (rend != null)
     {
