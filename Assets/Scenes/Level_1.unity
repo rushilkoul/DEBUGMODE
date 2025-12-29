@@ -529,8 +529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!114 &504719699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,8 +859,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!1 &524040711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,8 +1354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!114 &666831851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,8 +1684,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!43 &736858407
 Mesh:
   m_ObjectHideFlags: 0
@@ -1920,7 +1924,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6123713265073463219, guid: 8bb593c14a2e7d54ea5a7a605f4dfa85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8bb593c14a2e7d54ea5a7a605f4dfa85, type: 3}
 --- !u!43 &846006205
 Mesh:
@@ -2451,8 +2458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!1 &972299808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,8 +2775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!1 &1072933890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,8 +2904,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!114 &1072933896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2919,6 +2929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1104597808}
+  - component: {fileID: 1104597809}
   m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
@@ -2948,6 +2959,18 @@ Transform:
   - {fileID: 1110579146}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1104597809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104597807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2af308538cc4fa47bd641a34b2fd265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetVisibleInBugged
 --- !u!1 &1110579145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,8 +3097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!114 &1110579151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3275,6 +3299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 699959184923903227, guid: 504edf81d6eef7a4fb03216d6076a81d, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 623700831}
     - target: {fileID: 919133676609425625, guid: 504edf81d6eef7a4fb03216d6076a81d, type: 3}
       propertyPath: m_Name
       value: StackOverflow
@@ -3282,6 +3310,10 @@ PrefabInstance:
     - target: {fileID: 919133676609425625, guid: 504edf81d6eef7a4fb03216d6076a81d, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919133676609425625, guid: 504edf81d6eef7a4fb03216d6076a81d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3088623702675515558, guid: 504edf81d6eef7a4fb03216d6076a81d, type: 3}
       propertyPath: m_Layer
@@ -3334,10 +3366,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3088623702675515558, guid: 504edf81d6eef7a4fb03216d6076a81d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 504edf81d6eef7a4fb03216d6076a81d, type: 3}
 --- !u!43 &1173935244
 Mesh:
@@ -4009,8 +4038,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!1001 &1423400017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4066,7 +4096,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6123713265073463219, guid: 8bb593c14a2e7d54ea5a7a605f4dfa85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8bb593c14a2e7d54ea5a7a605f4dfa85, type: 3}
 --- !u!1 &1494334291
 GameObject:
@@ -4194,8 +4227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!114 &1494334297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4269,10 +4303,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6976675363328970619, guid: cda5d948b91ab8d4d8f0d1791fa43ddb, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6976675363328970619, guid: cda5d948b91ab8d4d8f0d1791fa43ddb, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8187407528325711281, guid: cda5d948b91ab8d4d8f0d1791fa43ddb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ea73b916aab6e384d843f1b1a337e9b7, type: 2}
+    - target: {fileID: 9012157238213134547, guid: cda5d948b91ab8d4d8f0d1791fa43ddb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4407,8 +4453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!114 &1654579153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4706,8 +4753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!114 &1764589810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5114,8 +5162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ccb2b501673ca4888df14ab968490b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room_Move
-  speed: 0.5
-  idlespeed: 0.1
+  moveSpeedMultiplier: 1.2
+  idleFlowSpeed: 0.5
+  propertyName: _ScrollOffset
 --- !u!1001 &2023526675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5435,6 +5484,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6976675363328970619, guid: b3d972e3e8cfd20489a42a97284a977e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6976675363328970619, guid: b3d972e3e8cfd20489a42a97284a977e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 9012157238213134547, guid: b3d972e3e8cfd20489a42a97284a977e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
