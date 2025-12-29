@@ -3762,8 +3762,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 50
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
-  m_sharedMaterial: {fileID: 4158193277370259624, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
+  m_sharedMaterial: {fileID: 230566699361451254, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4379,8 +4379,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
-  m_sharedMaterial: {fileID: 4158193277370259624, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
+  m_sharedMaterial: {fileID: 230566699361451254, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9186,8 +9186,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SETTINGS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
-  m_sharedMaterial: {fileID: 4158193277370259624, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7e7732e25928da24e9c40447eade1b84, type: 2}
+  m_sharedMaterial: {fileID: -3005377616436081073, guid: 7e7732e25928da24e9c40447eade1b84, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9284,7 +9284,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4158193277370259624, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
+  - {fileID: -3005377616436081073, guid: 7e7732e25928da24e9c40447eade1b84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9375,8 +9375,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0%
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
-  m_sharedMaterial: {fileID: 4158193277370259624, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
+  m_sharedMaterial: {fileID: 230566699361451254, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10066,38 +10066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 1
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
-  m_Version: 2
 --- !u!81 &1393284787
 AudioListener:
   m_ObjectHideFlags: 0
@@ -10669,38 +10637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 1
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
-  m_Version: 2
 --- !u!81 &1478786931
 AudioListener:
   m_ObjectHideFlags: 0
@@ -11044,8 +10980,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mouse Sensitivity
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
-  m_sharedMaterial: {fileID: 4158193277370259624, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
+  m_sharedMaterial: {fileID: 230566699361451254, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13115,8 +13051,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: GAME SETTINGS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
-  m_sharedMaterial: {fileID: 4158193277370259624, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7e7732e25928da24e9c40447eade1b84, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13182,7 +13118,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1933435328
@@ -13381,23 +13317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_CustomShadowLayers: 0
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
-  m_RenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_ShadowRenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_Version: 4
-  m_LightLayerMask: 1
-  m_ShadowLayerMask: 1
-  m_RenderingLayers: 1
-  m_ShadowRenderingLayers: 1
 --- !u!108 &1947702338
 Light:
   m_ObjectHideFlags: 0
@@ -13880,8 +13799,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Master Volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
-  m_sharedMaterial: {fileID: 4158193277370259624, guid: d2697431e8c8a3e41abcf817faff9f72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
+  m_sharedMaterial: {fileID: 230566699361451254, guid: 8d64ba37d872fa9478325807d14a8957, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
