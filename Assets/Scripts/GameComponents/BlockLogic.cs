@@ -16,6 +16,7 @@ public class BlockLogic : MonoBehaviour
   public Material normalMaterial;
   public Material buggedMaterial;
   public GameObject buggedTextParent;
+  public DrainCompleteLogic drainCompleteLogic;
 
   public void SetFluid(bool value)
   {
@@ -24,7 +25,7 @@ public class BlockLogic : MonoBehaviour
 
     if (isDrain && hasFluid)
     {
-      Debug.Log("Level complete");
+      drainCompleteLogic.OnComplete();
     }
 
     if (buggedTextParent != null)
