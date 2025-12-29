@@ -49,9 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf50bc9581f582c479fb256c59262d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockLogic
-  connections: 10
+  connections: -1
   isSource: 1
-  hasFluid: 0
+  isDrain: 0
+  hasFluid: 1
   isBugged: 0
   pipes: []
   normalMaterial: {fileID: 0}
