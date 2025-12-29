@@ -224,6 +224,9 @@
         },
         {
             "m_Id": "28387909efad436f82ddc4543e19ece9"
+        },
+        {
+            "m_Id": "3e9cbe4928294870902aece663ef434f"
         }
     ],
     "m_GroupDatas": [],
@@ -834,6 +837,20 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+                    "m_Id": "dfabcb01fd9f4b03ae7a49d62cf44cee"
+                },
+                "m_SlotId": 3
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "d97c5165fc774cb8b9a846a277152df4"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
                     "m_Id": "e400ec5b28a24857b70d5c110c46e8f0"
                 },
                 "m_SlotId": 2
@@ -974,8 +991,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 2517.999755859375,
-            "y": 1341.9998779296875
+            "x": 2600.999755859375,
+            "y": 1424.9998779296875
         },
         "m_Blocks": [
             {
@@ -991,8 +1008,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 2518.000244140625,
-            "y": 1635.0001220703125
+            "x": 2600.999755859375,
+            "y": 1609.9998779296875
         },
         "m_Blocks": [
             {
@@ -1018,6 +1035,9 @@
             },
             {
                 "m_Id": "66c7939a378e476390dccb2ed832f3cd"
+            },
+            {
+                "m_Id": "3e9cbe4928294870902aece663ef434f"
             }
         ]
     },
@@ -2495,6 +2515,40 @@
     "m_EnumValues": [
         0
     ]
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "3e9cbe4928294870902aece663ef434f",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.AlphaClipThreshold",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "9410fb209bf34bc9b7cb456d18526d87"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.AlphaClipThreshold"
 }
 
 {
@@ -4362,6 +4416,22 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "9410fb209bf34bc9b7cb456d18526d87",
+    "m_Id": 0,
+    "m_DisplayName": "Alpha Clip Threshold",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "AlphaClipThreshold",
+    "m_StageCapability": 2,
+    "m_Value": 0.5,
+    "m_DefaultValue": 0.5,
+    "m_Labels": [],
+    "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.ColorRGBMaterialSlot",
     "m_ObjectId": "94607b3afffc47b8958ac022aa1e79ff",
     "m_Id": 2,
@@ -4697,10 +4767,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 1703.0001220703125,
-            "y": 1871.0001220703125,
-            "width": 208.0,
-            "height": 277.9998779296875
+            "x": 1749.0,
+            "y": 1960.9998779296875,
+            "width": 207.9998779296875,
+            "height": 278.0001220703125
         }
     },
     "m_Slots": [
@@ -6334,16 +6404,16 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.Rendering.HighDefinition.ShaderGraph.SystemData",
     "m_ObjectId": "d6022c70a9b549baa2f768120089a589",
-    "m_MaterialNeedsUpdateHash": 0,
-    "m_SurfaceType": 1,
-    "m_RenderingPass": 4,
+    "m_MaterialNeedsUpdateHash": 280370,
+    "m_SurfaceType": 0,
+    "m_RenderingPass": 1,
     "m_BlendMode": 0,
     "m_ZTest": 4,
-    "m_ZWrite": false,
+    "m_ZWrite": true,
     "m_TransparentCullMode": 2,
     "m_OpaqueCullMode": 2,
     "m_SortPriority": 0,
-    "m_AlphaTest": false,
+    "m_AlphaTest": true,
     "m_ExcludeFromTUAndAA": false,
     "m_TransparentDepthPrepass": false,
     "m_TransparentDepthPostpass": false,
@@ -6425,7 +6495,7 @@
     "m_NormalDropOffSpace": 0,
     "m_BlendPreserveSpecular": true,
     "m_ReceiveDecals": true,
-    "m_ReceiveSSR": true,
+    "m_ReceiveSSR": false,
     "m_ReceiveSSRTransparent": false,
     "m_SpecularAA": false,
     "m_SpecularOcclusionMode": 1,
