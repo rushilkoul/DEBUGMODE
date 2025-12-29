@@ -752,6 +752,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7125425141302730024, guid: 0fd82fc8a0b79c046971b7e13660a66e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8637179993578403998, guid: 0fd82fc8a0b79c046971b7e13660a66e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.6668
@@ -813,6 +817,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 607133093361133799, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 520441576}
     - target: {fileID: 671026222248865892, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
       propertyPath: m_Material
       value: 
@@ -859,15 +867,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491061743952443090, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
       propertyPath: jumpForce
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3491061743952443090, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3491061743952443090, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
+      propertyPath: sprintSpeed
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491061743952443090, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
       propertyPath: GravityScale
-      value: 9
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3491061743952443090, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
       propertyPath: groundLayer.m_Bits
@@ -1456,6 +1468,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2003418224686393236, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
   m_PrefabInstance: {fileID: 299632981}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &520441576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3491061743952443090, guid: 513c1c92fe547fe448f56340c831146b, type: 3}
+  m_PrefabInstance: {fileID: 299632981}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b890472b1207343a35593d9cd63f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movement
 --- !u!1 &523101105
 GameObject:
   m_ObjectHideFlags: 0
@@ -5380,6 +5403,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5956502994304948122, guid: 10027313e632f914e8eecd1c144fabc3, type: 3}
       propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7125425141302730024, guid: 10027313e632f914e8eecd1c144fabc3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8637179993578403998, guid: 10027313e632f914e8eecd1c144fabc3, type: 3}
