@@ -8624,6 +8624,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13958917}
     - target: {fileID: 2402854346291031464, guid: 10027313e632f914e8eecd1c144fabc3, type: 3}
+      propertyPath: InfiniteManager
+      value: 
+      objectReference: {fileID: 349172358}
+    - target: {fileID: 2402854346291031464, guid: 10027313e632f914e8eecd1c144fabc3, type: 3}
       propertyPath: drainCompleteLogic
       value: 
       objectReference: {fileID: 1667578868}
@@ -8697,19 +8701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrainCompleteLogic
   eventToRun:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 3ef858cbe8ce97645ab6e3d4475d7a09, type: 3}
-        m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1001 &1712439277
 PrefabInstance:
   m_ObjectHideFlags: 0
