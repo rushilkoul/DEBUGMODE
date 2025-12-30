@@ -34,6 +34,7 @@ public class ShowBuggedOnce : MonoBehaviour
             {
                 if (rend) rend.enabled = true;
             }
+            gameObject.GetComponent<ShowBuggedOnce>().enabled = false;
         }
         else 
         {

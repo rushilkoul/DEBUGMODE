@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StackOverflowBox : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class StackOverflowBox : MonoBehaviour
     
     private bool isFixed = false;
     private float detectionCooldown = 0f;
+    public UnityEvent onFixed;
     
     void Start()
     {
@@ -52,6 +54,7 @@ public class StackOverflowBox : MonoBehaviour
     isFixed = true;
     
     Debug.Log("Stack Overflow Fixed!");
+    onFixed.Invoke();
     
     if (overflowParticles != null)
     {
