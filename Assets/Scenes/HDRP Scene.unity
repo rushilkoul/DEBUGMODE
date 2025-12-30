@@ -4961,7 +4961,8 @@ MonoBehaviour:
     new I'll be there to guide you. But be here AS SOON AS POSSIBLE OR ELSE YOU ARE
     FIRED!"
   - 'some basic description about the level. '
-  - Did i mention ajit tomar is my absolute king
+  - "The system is fracturing. Do you hear that? That's the sound of your career
+    ending.Move now or  you\u2019re locked in permanently."
   levelLoader: {fileID: 1578988787}
 --- !u!114 &600681962
 MonoBehaviour:
