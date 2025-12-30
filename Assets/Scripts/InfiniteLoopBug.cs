@@ -52,10 +52,10 @@ public class InfiniteLoopbug : MonoBehaviour
 
         float padding = 0.0f;
 
-        waypoints.Add(transform.TransformPoint(center + new Vector3(-x + padding, y - padding, 0))); // Top Left
-        waypoints.Add(transform.TransformPoint(center + new Vector3(x - padding, y - padding, 0)));  // Top Right
-        waypoints.Add(transform.TransformPoint(center + new Vector3(x - padding, -y + padding, 0))); // Bottom Right
-        waypoints.Add(transform.TransformPoint(center + new Vector3(-x + padding, -y + padding, 0)));// Bottom Left
+        waypoints.Add(transform.TransformPoint(center + new Vector3(-x + padding, y - padding, 0)));
+        waypoints.Add(transform.TransformPoint(center + new Vector3(x - padding, y - padding, 0)));  
+        waypoints.Add(transform.TransformPoint(center + new Vector3(x - padding, -y + padding, 0))); 
+        waypoints.Add(transform.TransformPoint(center + new Vector3(-x + padding, -y + padding, 0)));
     }
 
     void OnCornerHit()

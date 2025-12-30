@@ -98,14 +98,12 @@ public class GridManager : MonoBehaviour
 
   public void ValidateFluid()
   {
-    // reset all
     foreach (var b in blockMap.Values)
       b.SetFluid(false);
 
     Queue<Vector3Int> q = new();
     HashSet<Vector3Int> visited = new();
 
-    // enqueue sources
     foreach (var kv in blockMap)
     {
       if (kv.Value.isSource)
@@ -122,7 +120,6 @@ public class GridManager : MonoBehaviour
       return;
     }
 
-    // BFS
     while (q.Count > 0)
     {
       Vector3Int cur = q.Dequeue();
