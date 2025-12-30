@@ -389,7 +389,7 @@ MonoBehaviour:
       m_HorizontalBearingY: 90
       m_HorizontalAdvance: 90
     m_GlyphRect:
-      m_X: 783
+      m_X: 500
       m_Y: 10
       m_Width: 35
       m_Height: 79
@@ -584,85 +584,45 @@ MonoBehaviour:
     m_Height: 98
   - m_X: 98
     m_Y: 31
-    m_Width: 98
+    m_Width: 87
     m_Height: 98
   - m_X: 0
     m_Y: 42
-    m_Width: 87
-    m_Height: 98
-  - m_X: 294
-    m_Y: 0
-    m_Width: 87
-    m_Height: 98
-  - m_X: 381
-    m_Y: 0
-    m_Width: 98
-    m_Height: 98
-  - m_X: 479
-    m_Y: 0
-    m_Width: 98
-    m_Height: 98
-  - m_X: 577
-    m_Y: 0
-    m_Width: 98
-    m_Height: 98
-  - m_X: 675
-    m_Y: 0
-    m_Width: 98
-    m_Height: 98
-  - m_X: 773
-    m_Y: 0
-    m_Width: 54
-    m_Height: 98
-  - m_X: 827
-    m_Y: 0
-    m_Width: 98
-    m_Height: 98
-  - m_X: 925
-    m_Y: 0
-    m_Width: 98
-    m_Height: 98
-  - m_X: 196
-    m_Y: 98
-    m_Width: 98
-    m_Height: 98
-  - m_X: 87
-    m_Y: 129
     m_Width: 98
     m_Height: 98
   - m_X: 294
-    m_Y: 98
+    m_Y: 0
     m_Width: 98
     m_Height: 98
   - m_X: 392
-    m_Y: 98
+    m_Y: 0
     m_Width: 98
     m_Height: 98
+  - m_X: 490
+    m_Y: 0
+    m_Width: 54
+    m_Height: 98
   m_FreeGlyphRects:
-  - m_X: 87
-    m_Y: 42
-    m_Width: 11
-    m_Height: 87
-  - m_X: 0
-    m_Y: 227
-    m_Width: 1023
-    m_Height: 796
   - m_X: 185
-    m_Y: 196
+    m_Y: 98
     m_Width: 838
-    m_Height: 827
+    m_Height: 925
+  - m_X: 185
+    m_Y: 31
+    m_Width: 11
+    m_Height: 992
   - m_X: 0
     m_Y: 140
-    m_Width: 87
+    m_Width: 1023
     m_Height: 883
-  - m_X: 185
+  - m_X: 98
     m_Y: 129
-    m_Width: 11
+    m_Width: 925
     m_Height: 894
-  - m_X: 490
-    m_Y: 98
-    m_Width: 533
-    m_Height: 925
+  - m_X: 544
+    m_Y: 0
+    m_Width: 479
+    m_Height: 1023
   m_FontFeatureTable:
     m_MultipleSubstitutionRecords: []
     m_LigatureSubstitutionRecords:
