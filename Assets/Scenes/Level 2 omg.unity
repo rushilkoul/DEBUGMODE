@@ -10861,9 +10861,11 @@ MonoBehaviour:
   isDrain: 0
   hasFluid: 0
   isBugged: 1
+  blockVisual: {fileID: 0}
   pipes: []
   normalMaterial: {fileID: 0}
   buggedMaterial: {fileID: 0}
+  notPickableMaterial: {fileID: 0}
   buggedTextParent: {fileID: 0}
   drainCompleteLogic: {fileID: 0}
   unlocker: {fileID: 0}
@@ -11725,7 +11727,7 @@ PrefabInstance:
     - target: {fileID: 6553277945453240052, guid: 8bb593c14a2e7d54ea5a7a605f4dfa85, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 213a947b51a1e1948bf9c0afacb23b30, type: 2}
+      objectReference: {fileID: 2100000, guid: 3c11f29638cd2864f87c3937073fbc45, type: 2}
     - target: {fileID: 8637179993578403998, guid: 8bb593c14a2e7d54ea5a7a605f4dfa85, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.1111994
@@ -20974,9 +20976,11 @@ MonoBehaviour:
   isDrain: 0
   hasFluid: 0
   isBugged: 1
+  blockVisual: {fileID: 0}
   pipes: []
   normalMaterial: {fileID: 0}
   buggedMaterial: {fileID: 0}
+  notPickableMaterial: {fileID: 0}
   buggedTextParent: {fileID: 0}
   drainCompleteLogic: {fileID: 0}
   unlocker: {fileID: 0}

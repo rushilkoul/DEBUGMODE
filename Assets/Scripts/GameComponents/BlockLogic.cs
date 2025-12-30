@@ -24,9 +24,9 @@ public class BlockLogic : MonoBehaviour
   public WallUnlock unlocker;
 
 
-  void Start()
+  void Awake()
   {
-    if (!transform.CompareTag("Pickable"))
+    if (transform.CompareTag("Pickable Block"))
     {
       Renderer rend = blockVisual.GetComponent<Renderer>();
       rend.material = notPickableMaterial;
