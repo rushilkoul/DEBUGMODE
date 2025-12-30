@@ -18,6 +18,10 @@ public class BlockLogic : MonoBehaviour
   public GameObject buggedTextParent;
   public DrainCompleteLogic drainCompleteLogic;
 
+  public void SetSource(bool value)
+  {
+    isSource = value;
+  }
   public void SetFluid(bool value)
   {
     hasFluid = value;
