@@ -57,6 +57,7 @@ MonoBehaviour:
   normalMaterial: {fileID: 2100000, guid: d56daa5eaa44be34a8223107cf082837, type: 2}
   buggedMaterial: {fileID: 2100000, guid: 95c419c4fd715ab40ae6c44660de19be, type: 2}
   buggedTextParent: {fileID: 8222085747742576217}
+  drainCompleteLogic: {fileID: 0}
 --- !u!1 &770321183970193676
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +121,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3005377616436081073, guid: 7e7732e25928da24e9c40447eade1b84, type: 2}
+  - {fileID: 7984304370835653660, guid: efa02db250944e9448fe4a8913591e1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,8 +167,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: DRAIN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7e7732e25928da24e9c40447eade1b84, type: 2}
-  m_sharedMaterial: {fileID: -3005377616436081073, guid: 7e7732e25928da24e9c40447eade1b84, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: efa02db250944e9448fe4a8913591e1a, type: 2}
+  m_sharedMaterial: {fileID: 7984304370835653660, guid: efa02db250944e9448fe4a8913591e1a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
