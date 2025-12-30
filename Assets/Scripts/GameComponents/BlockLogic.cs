@@ -12,16 +12,26 @@ public class BlockLogic : MonoBehaviour
   public bool isBugged;
 
   [Header("Bug Visual")]
+  public GameObject blockVisual;
   public GameObject[] pipes;
   public Material normalMaterial;
   public Material buggedMaterial;
+  public Material notPickableMaterial;
   public GameObject buggedTextParent;
   public DrainCompleteLogic drainCompleteLogic;
-  
+
   [Header("External Managers")]
   public WallUnlock unlocker;
 
 
+  void Start()
+  {
+    if (!transform.CompareTag("Pickable"))
+    {
+      Renderer rend = blockVisual.GetComponent<Renderer>();
+      rend.material = notPickableMaterial;
+    }
+  }
   public void SetSource(bool value)
   {
     isSource = value;
@@ -33,12 +43,12 @@ public class BlockLogic : MonoBehaviour
 
     if (isDrain && hasFluid)
     {
-     
+
       drainCompleteLogic.OnComplete();
       if (unlocker != null)
-    {
+      {
         unlocker.DisableWall();
-    }
+      }
     }
 
     if (buggedTextParent != null)
