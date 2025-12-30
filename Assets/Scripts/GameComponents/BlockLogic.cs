@@ -17,6 +17,11 @@ public class BlockLogic : MonoBehaviour
   public Material buggedMaterial;
   public GameObject buggedTextParent;
   public DrainCompleteLogic drainCompleteLogic;
+  
+  [Header("External Managers")]
+  public WallUnlock unlocker;
+  public InfiniteBugFix InfiniteManager;
+
 
   public void SetSource(bool value)
   {
@@ -29,7 +34,15 @@ public class BlockLogic : MonoBehaviour
 
     if (isDrain && hasFluid)
     {
+      if (InfiniteManager != null)
+    {
+        InfiniteManager.OnPuzzleComplete();
+    }
       drainCompleteLogic.OnComplete();
+      if (unlocker != null)
+    {
+        unlocker.DisableWall();
+    }
     }
 
     if (buggedTextParent != null)
