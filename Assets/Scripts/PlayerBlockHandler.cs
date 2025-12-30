@@ -77,7 +77,7 @@ public class PlayerBlockHandler : MonoBehaviour
 
     Transform root = hit.collider.transform.parent;
 
-    if (root == null || !root.CompareTag("Pickable Block"))
+    if (root == null || !(root.CompareTag("Pickable Block") || root.CompareTag("StackBlock")))
       return;
 
     heldBlock = root.gameObject;
