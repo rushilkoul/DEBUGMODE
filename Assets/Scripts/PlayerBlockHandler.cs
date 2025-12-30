@@ -23,6 +23,8 @@ public class PlayerBlockHandler : MonoBehaviour
   Vector3 originalScale;
   Collider heldCollider;
   Vector3Int lastCell;
+  public AudioClip rotateSound;
+  public AudioClip placeSound;
 
   void Start()
   {
@@ -63,6 +65,7 @@ public class PlayerBlockHandler : MonoBehaviour
       if (angle < 0) logic.RotateLeft();
       else logic.RotateRight();
     }
+    GetComponent<AudioSource>()?.PlayOneShot(rotateSound);
   }
 
   void TryPickup()
@@ -81,6 +84,7 @@ public class PlayerBlockHandler : MonoBehaviour
       return;
 
     heldBlock = root.gameObject;
+    GetComponent<AudioSource>()?.PlayOneShot(placeSound);
 
     lastCell = new Vector3Int(
         Mathf.RoundToInt(heldBlock.transform.position.x / grid.cellSize),
@@ -144,6 +148,9 @@ public class PlayerBlockHandler : MonoBehaviour
 
     heldBlock = null;
     heldCollider = null;
+
+    GetComponent<AudioSource>()?.PlayOneShot(placeSound);
+
     Collider[] nearby = Physics.OverlapSphere(placedBlock.transform.position, 5f);
 
     foreach (Collider col in nearby)
