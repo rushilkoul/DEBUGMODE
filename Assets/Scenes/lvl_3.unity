@@ -12731,6 +12731,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 13958917}
     - target: {fileID: 2402854346291031464, guid: 10027313e632f914e8eecd1c144fabc3, type: 3}
+      propertyPath: InfiniteManager
+      value: 
+      objectReference: {fileID: 349172358}
+    - target: {fileID: 2402854346291031464, guid: 10027313e632f914e8eecd1c144fabc3, type: 3}
       propertyPath: drainCompleteLogic
       value: 
       objectReference: {fileID: 1667578868}
