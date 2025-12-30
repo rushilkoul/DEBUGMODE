@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class StackOverflowBox : MonoBehaviour
 {
-    public float detectionRange = 2f;
-    public string fixBoxTag = "Pickable Block";
+        public string fixBoxTag = "Pickable Block";
     public ParticleSystem overflowParticles;
     
     private bool isFixed = false;
@@ -32,15 +31,18 @@ public class StackOverflowBox : MonoBehaviour
     
     void CheckForFixBox()
     {
-        Collider[] nearbyBoxes = Physics.OverlapSphere(transform.position, detectionRange);
-        
-        foreach (Collider col in nearbyBoxes)
+        Vector3 rayStart = transform.position + Vector3.up * (1.7778f * 0.4f);
+        Vector3 direction = Vector3.up;
+        float distance = 1.7778f;
+
+        RaycastHit hit;
+        if (Physics.Raycast(rayStart, direction, out hit, distance))
         {
-            Transform root = col.transform.root;
+            Transform root = hit.collider.transform.root;
+
             if (root.CompareTag(fixBoxTag) && root.gameObject != gameObject)
             {
                 FixOverflow(root.gameObject);
-                break;
             }
         }
     }
@@ -66,8 +68,11 @@ public class StackOverflowBox : MonoBehaviour
     
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
+    Vector3 rayStart = transform.position + Vector3.up * (1.7778f * 0.4f);
+    float distance = 1.7778f;
+
+    Gizmos.color = Color.red;
+    Gizmos.DrawRay(rayStart, Vector3.up * distance);
     }
     public void OnBoxPlacedNearby()
     {

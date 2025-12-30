@@ -5,7 +5,9 @@ public class TicketManager : MonoBehaviour
 {
     [SerializeField] GameObject ticketDesc;
     [SerializeField] GameObject ticketTitle;
+    [TextArea(3, 10)]
     [SerializeField] String[] ticketDescriptions;
+    [SerializeField] LevelLoader levelLoader;
 
     void Start()
     {
@@ -14,6 +16,7 @@ public class TicketManager : MonoBehaviour
     }
     public void onSelectTicket(int ticketID)
     {
+        levelLoader.index = ticketID;
         if(ticketID == 1)
         {
             ticketDesc.GetComponent<TextMeshProUGUI>().text = ticketDescriptions[0];
