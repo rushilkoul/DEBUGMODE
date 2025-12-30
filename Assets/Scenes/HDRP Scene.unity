@@ -4960,8 +4960,12 @@ MonoBehaviour:
   - "WHERE ARE YOU? We need your help with debugging this script. \n\nSince you are
     new I'll be there to guide you. But be here AS SOON AS POSSIBLE OR ELSE YOU ARE
     FIRED!"
-  - 'some basic description about the level. '
-  - "The system is fracturing. Do you hear that? That's the sound of your career
+  - 'I told you to be here ASAP.Don''t get comfortable.
+
+
+    Every second you waste
+    is another reason for me to sign your termination papers. GET TO WORK!! '
+  - "The system is fracturing. Do you hear that? \n\nThat's the sound of your career
     ending.Move now or  you\u2019re locked in permanently."
   levelLoader: {fileID: 1578988787}
 --- !u!114 &600681962
