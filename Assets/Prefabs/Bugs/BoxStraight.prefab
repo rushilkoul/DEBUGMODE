@@ -248,12 +248,15 @@ MonoBehaviour:
   isDrain: 0
   hasFluid: 0
   isBugged: 0
+  blockVisual: {fileID: 6452118503200653707}
   pipes:
   - {fileID: 8558306762748697113}
   normalMaterial: {fileID: 2100000, guid: d56daa5eaa44be34a8223107cf082837, type: 2}
   buggedMaterial: {fileID: 2100000, guid: 95c419c4fd715ab40ae6c44660de19be, type: 2}
+  notPickableMaterial: {fileID: 2100000, guid: 213a947b51a1e1948bf9c0afacb23b30, type: 2}
   buggedTextParent: {fileID: 7227467138383891657}
   drainCompleteLogic: {fileID: 0}
+  unlocker: {fileID: 0}
 --- !u!1 &770321183970193676
 GameObject:
   m_ObjectHideFlags: 0
