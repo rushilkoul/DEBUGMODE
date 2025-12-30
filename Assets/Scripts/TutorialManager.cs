@@ -15,6 +15,7 @@ public class TutorialManager : MonoBehaviour
     public int currentIndex = 0;
     private Coroutine typingCoroutine;
     private float timer = 0f;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -92,6 +93,11 @@ public class TutorialManager : MonoBehaviour
         
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         typingCoroutine = StartCoroutine(TypewriterEffect(steps[index].message));
+        // play audio
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 
     private IEnumerator TypewriterEffect(string message)
